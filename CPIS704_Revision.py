@@ -15,7 +15,11 @@ def ask_question(question_number, question, options, correct_answer, image_url):
 
     # Check if the user's answer is correct
     is_correct = user_answer == correct_answer.lower()
-
+    # Provide feedback
+    if is_correct:
+        st.write("Correct!")
+    else:
+        st.write(f"Incorrect. The correct answer is '{correct_answer}'.")
     return user_answer, is_correct
 
 def evaluate_quiz(user_answers):
@@ -27,37 +31,37 @@ def evaluate_quiz(user_answers):
 
 def display_results(correct_answers, total_questions):
     score_percentage = int((correct_answers / total_questions) * 100)
-    st.write(f"You answered {correct_answers} out of {total_questions} correctly ({score_percentage}%).")
+    st.write(f"You answered {correct_answers} out of {total_questions} correctly up to now :blue[{user_name}] ({score_percentage}%).")
 
     # Provide additional feedback based on the score
-    if score_percentage >= 80:
-        st.write("Excellent work! You have a strong understanding of the topics covered in this quiz.")
-    elif score_percentage >= 60:
-        st.write("Good job! You have a good grasp of the material but there is still room for improvement.")
+    if score_percentage > 90:
+        st.write(f"You must be some kind of genius :blue[{user_name}], You are winning :handshake:")
+    elif score_percentage > 80:
+        st.write(f"Now you're scaring me :blue[{user_name}]! Though I'm still in the lead :crossed_fingers:")
     else:
-        st.write("Keep practicing! You can improve your score by reviewing the topics covered in this quiz.")
+        st.write(f"Keep practicing :blue[{user_name}]! I'm still in the lead :zany_face:")
 
 def handle_quiz_completion(user_answers):
     correct_answers, total_questions = evaluate_quiz(user_answers)
 
     if correct_answers == total_questions:
-        st.success("Congratulations! You answered all questions correctly.")
+        st.success(":rainbow[Congratulations! YOU WIN] You answered all questions correctly.")
     else:
-        st.warning("Please choose the right answer to move to the next question, **OR** :red[review the topics covered in this quiz and try again.]")
+        st.warning("Please try to choose the right answer to move to the next chalenge")
 
-#    display_results(correct_answers, total_questions)
+    display_results(correct_answers, total_questions)
 
 if __name__ == "__main__":
     """
     # :orange[***CPIS704 - Revision***]
-    ### This is an example of a simple :blue[***Chatbot Generative AI***]. According to **(Andrew Ng)** one of the tasks that LLMs can carry out is **chatting**. Hope you enjoy it :blush:
-    ##### :orange[Please answer the following questions to the best of your ability:]
+    ### This is an example of a simple :blue[***Chatbot Generative AI***]. According to **(Andrew Ng)** :technologist: one of the tasks that LLMs can carry out is **chatting**.
+    ##### :red[Can you tell me your name please:] 
     """
-    st.markdown("**_____________________________________________________________________________**")
-    #st.markdown("A generative AI chatbot is a type of conversational AI system that uses deep learning and natural language processing (NLP) techniques to generate human-like text responses in real-time.")
-    #st.title("***CPIS704 - Revision***")
-    #st.markdown("**Please answer the following questions to the best of your ability.**")
-
+    user_name = st.text_input("", "")
+    st.markdown("______________________________________________________")
+    st.subheader(f" Nice to know you Mr :orange[{user_name}] :blush:. Let us chat a little bit about 704 course :book:, shall we? I'm gonna play a game with you. If you answer all my questions, you will WIN :trophy:")
+    st.markdown("______________________________________________________")
+    
     # Define the quiz questions with image URLs
     questions = [
         {
