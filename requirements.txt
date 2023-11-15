@@ -1,9 +1,2 @@
-pandas
-plotly
 streamlit
-openpyxl
-wordcloud
-numpy
-nltk
-Counter
-stopwords
+random
