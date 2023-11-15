@@ -22,6 +22,7 @@ def ask_question(question_number, question, options, correct_answer, image_url):
 #        st.write(f"Incorrect. The correct answer is '{correct_answer}'.")
     return user_answer, is_correct
 
+# Evaluate the quiz
 def evaluate_quiz(user_answers):
     correct_answers = 0
     for answer in user_answers:
@@ -29,6 +30,7 @@ def evaluate_quiz(user_answers):
             correct_answers += 1
     return correct_answers, len(user_answers)
 
+# Display the results
 def display_results(correct_answers, total_questions):
     score_percentage = int((correct_answers / total_questions) * 100)
     st.write(f"You answered {correct_answers} out of {total_questions} correctly up to now :blue[{user_name}] ({score_percentage}%).")
@@ -41,6 +43,7 @@ def display_results(correct_answers, total_questions):
     else:
         st.write(f"Keep practicing :blue[{user_name}]! I'm still in the lead :zany_face:")
 
+# Handle the quiz completion
 def handle_quiz_completion(user_answers):
     correct_answers, total_questions = evaluate_quiz(user_answers)
 
@@ -173,6 +176,7 @@ def show_hide_question():
 
 
 if __name__ == "__main__":
+# the main page 
     """
     # :orange[***CPIS704 - Revision***]
     ### This is an example of a simple :blue[***Chatbot Generative AI***]. According to **(Andrew Ng)** :technologist: one of the tasks that LLMs can carry out is **chatting**.
