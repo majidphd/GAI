@@ -16,10 +16,10 @@ def ask_question(question_number, question, options, correct_answer, image_url):
     # Check if the user's answer is correct
     is_correct = user_answer == correct_answer.lower()
     # Provide feedback
-    if is_correct:
-        st.write("Correct!")
-    else:
-        st.write(f"Incorrect. The correct answer is '{correct_answer}'.")
+#    if is_correct:
+#        st.write("Correct!")
+#    else:
+#        st.write(f"Incorrect. The correct answer is '{correct_answer}'.")
     return user_answer, is_correct
 
 def evaluate_quiz(user_answers):
@@ -51,9 +51,10 @@ def handle_quiz_completion(user_answers):
 
     display_results(correct_answers, total_questions)
 
-def start_quiz():
-    # Start button to initiate the quiz
-    if st.button("begen Quiz"):
+def show_hide_question():
+    # Create a collapsible element to show/hide the question
+    with st.expander(":red[**Show me the chalenge, I will win very easly**] :wink:"):
+
         # Define the quiz questions with image URLs
         questions = [
             {
@@ -181,4 +182,4 @@ if __name__ == "__main__":
     st.markdown("______________________________________________________")
     st.subheader(f" Nice to know you Mr :orange[{user_name}] :blush:. Let us chat a little bit about 704 course :book:, shall we? I'm gonna play a game with you. If you answer all my questions, you will WIN :trophy:")
     st.markdown("______________________________________________________")
-    start_quiz()
+    show_hide_question()
