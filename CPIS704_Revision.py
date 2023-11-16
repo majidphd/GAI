@@ -16,9 +16,11 @@ def ask_question(question_number, question, options, correct_answer, image_url):
     # Check if the user's answer is correct
     is_correct = user_answer == correct_answer.lower()
     # Provide feedback
-#    if is_correct:
-#        st.write("Correct!")
-#    else:
+    if is_correct:
+        st.write(f":rainbow[Well done {user_name}] :clap:")
+        st.markdown("______________________________________________________")
+    else:
+        st.markdown("______________________________________________________")
 #        st.write(f"Incorrect. The correct answer is '{correct_answer}'.")
     return user_answer, is_correct
 
