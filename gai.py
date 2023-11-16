@@ -2,8 +2,9 @@ from openai import OpenAI
 import streamlit as st
 
 with st.sidebar:
-#    openai_api_key = st.text_input("OpenAI API Key", key="chatbot_api_key", type="password")
-    openai_api_key = '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'
+    
+    openai_api_key = st.text_input("***In order to benefit from this ChatBot, you have to create your own :red[API Key] through the following site: [Open-AI](https://platform.openai.com/api-keys)***", key="chatbot_api_key", type="password")
+#    openai_api_key = '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'
     """
     ## :green[Generative AI]
     According to :red[(Andrew Ng)] Generative AI 
@@ -22,7 +23,7 @@ with st.sidebar:
     st.markdown("_____________________________")
     "[You can check out 704- Revision](https://704-revision.streamlit.app/)"
     "[And student predict streamlit](https://student-predict-parts.streamlit.app/)"
-    "[Open GitHub to see codes](https://github.com/majidphd)"
+    "[Open GitHub to see codes](https://github.com/majidphd/GAI)"
 
 st.title("💬 :blue[*Chatbot Generative AI*]")
 st.markdown("🚀 ***A streamlit chatbot with OpenAI LLM: :orange[Done by MAJED ALZAHRANI]***")
