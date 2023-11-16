@@ -23,7 +23,7 @@ with st.sidebar:
     st.markdown("_____________________________")
     "[You can check out 704- Revision](https://704-revision.streamlit.app/)"
     "[And student predict streamlit](https://student-predict-parts.streamlit.app/)"
-    "[Open GitHub to see codes](https://github.com/majidphd/GAI)"
+#    "[Open GitHub to see codes](https://github.com/majidphd/GAI)"
 
 st.title("💬 :blue[*Chatbot Generative AI*]")
 st.markdown("🚀 ***A streamlit chatbot with OpenAI LLM: :orange[Done by MAJED ALZAHRANI]***")
@@ -35,7 +35,7 @@ for msg in st.session_state.messages:
 
 if prompt := st.chat_input():
     if not openai_api_key:
-        st.info("Please add your OpenAI API key to continue.")
+        st.info("***Please add your OpenAI API-key in the sidebar to continue...***")
         st.stop()
 
     client = OpenAI(api_key=openai_api_key)
