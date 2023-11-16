@@ -3,7 +3,7 @@ import streamlit as st
 
 with st.sidebar:
     
-    openai_api_key = st.text_input("***In order to benefit from this ChatBot, you have to create your own :red[API Key] from the following site and hit ENTER: [Open-AI](https://platform.openai.com/api-keys)***", key="chatbot_api_key", type="password")
+    openai_api_key = st.text_input("***In order to benefit from this ChatBot, you have to create your own :red[API Key] from the following site: [Open-AI](https://platform.openai.com/api-keys)***", key="chatbot_api_key", type="password")
 #    openai_api_key = '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'
     """
     ## :green[Generative AI]
